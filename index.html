@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Lentera SMANAWA</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* TAB BAR iOS STYLE */
+        .tabbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: flex;
+            gap: 25px;
+            background: rgba(255,255,255,0.35);
+            backdrop-filter: blur(25px);
+            padding: 12px 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            z-index: 20;
+        }
+
+        .tabbar button {
+            background: none;
+            border: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #007aff;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .tabbar button:hover {
+            opacity: 0.6;
+        }
+
+        /* POPUP GLASS CARD */
+        .popup-card {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 85%;
+            max-width: 450px;
+            padding: 25px;
+
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(25px);
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+            text-align: center;
+            animation: fadeUp 0.25s ease;
+            z-index: 30;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translate(-50%, 15px); }
+            to   { opacity: 1; transform: translate(-50%, 0); }
+        }
+
+        .popup-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .popup-close {
+            margin-top: 15px;
+            background: #007aff;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+     <script>
+        function showPopup(id) {
+            document.getElementById("popup-" + id).style.display = "block";
+        }
+
+        function closePopup(id) {
+            document.getElementById("popup-" + id).style.display = "none";
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+</head>
+<body>
+    <header>
+        <h1>✨ Lentera SMANAWA </h1>
+        <p>Solusi Literasi, Edukasi, dan Tabungan Elektronik 🏦 ATM SMANAWA untuk Siswa SMAN 9 Malang</p>
+        <a href="login.php" class="btn">💲 Mulai Transaksi</a>
+        <a href="https://applemusicdh.wixsite.com/e-library-sma" 
+   class="btn" 
+   target="_blank" 
+   rel="noopener">📚 Akses e-Library</a>
+   <a href="https://portal.sman9-malang.sch.id/" 
+   class="btn" 
+   target="_blank" 
+   rel="noopener">🏫 Portal SMANAWA</a>
+
+    </header>
+
+    <section class="about">
+        <h2>Tentang Kami</h2>
+        <p>✨ Lentera SMANAWA adalah e-Library digital yang menyediakan informasi kurikulum, buku pembelajaran digital, serta layanan tanya jawab seputar kurikulum untuk siswa SMAN 9 Malang.
+</p>
+<p>____________</p>
+        <p>
+            🏦 ATM SMANAWA adalah simulasi sistem perbankan sederhana berbasis web 
+            yang dikembangkan oleh siswa untuk belajar logika pemrograman dan sistem keuangan digital.
+        </p>
+        <p>Tim Pengembang: Dhanif & Arzandi</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Lentera SMANAWA | Proyek TIK-D</p>
+    </footer>
+     <!-- TAB BAR -->
+    <div class="tabbar">
+        <button onclick="showPopup('registrasi')">
+            <i class="bi bi-person-plus"></i><br>
+        Registrasi</button>
+        <button onclick="showPopup('faq')">
+            <i class="bi bi-question-circle"></i><br>
+        FAQ</button>
+        <button onclick="showPopup('guide')">
+            <i class="bi bi-journal-bookmark"></i><br>
+        User Guide</button>
+        <button onclick="showPopup('contact')">
+            <i class="bi bi-telephone"></i><br>
+        Contact</button>
+    </div>
+
+    <!-- POPUP: REGISTRASI -->
+    <div id="popup-registrasi" class="popup-card" style="display:none;">
+        <h3>Registrasi Akun</h3>
+        <p>
+            Untuk registrasi dan aktivasi akun ATM SMANAWA,<br>
+            silakan hubungi Call Center:
+        </p>
+        <b>📞 0812-3456-7890</b>
+        <p>Admin akan membantu proses pembuatan akun.</p>
+        <button class="popup-close" onclick="closePopup('registrasi')">Tutup</button>
+    </div>
+
+    <!-- POPUP: FAQ -->
+    <div id="popup-faq" class="popup-card" style="display:none;">
+        <h3>FAQ — Pertanyaan Umum</h3>
+        <p>• Bagaimana cara menggunakan ATM?<br>→ Login, lalu pilih jenis transaksi.</p>
+        <p>• Bagaimana jika lupa PIN?<br>→ Hubungi admin untuk reset.</p>
+        <p>• Apakah saldo real?<br>→ Tidak, ini simulasi pembelajaran.</p>
+        <button class="popup-close" onclick="closePopup('faq')">Tutup</button>
+    </div>
+
+    <!-- POPUP: USER GUIDE -->
+    <div id="popup-guide" class="popup-card" style="display:none;">
+        <h3>User Guide</h3>
+        <p>1. Masuk ke menu Login.</p>
+        <p>2. Masukkan Username & PIN.</p>
+        <p>3. Pilih jenis transaksi: Cek Saldo, Setor, Tarik.</p>
+        <p>4. Lihat Riwayat untuk memantau aktivitas.</p>
+        <p>5. Logout setelah selesai.</p>
+        <button class="popup-close" onclick="closePopup('guide')">Tutup</button>
+    </div>
+
+    <!-- POPUP: CONTACT -->
+    <div id="popup-contact" class="popup-card" style="display:none;">
+        <h3>Contact & Layanan</h3>
+        <p>📞 Pengaduan, kritik & saran:</p>
+        <p><b>0812-3456-7890</b></p>
+        <p>📧 Email layanan:</p>
+        <p><b>atmsmanawa@gmail.com</b></p>
+        <button class="popup-close" onclick="closePopup('contact')">Tutup</button>
+    </div>
+
+</body>
+</html>

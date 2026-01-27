@@ -1,0 +1,290 @@
+/* ★ FONT — memakai font Apple (SF Pro / San Francisco) */
+* {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+                 "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================= */
+/*     BACKGROUND UTAMA (NEW)    */
+/* ============================= */
+
+body {
+    background: url("https://plutuseducation.com/blog/wp-content/uploads/2024/12/image-82-768x403.png") no-repeat center center fixed;
+    background-size: cover;
+
+    /* overlay gelap tipis agar teks tetap terlihat */
+    position: relative;
+    min-height: 100vh;
+    padding: 20px;
+    color: black;
+}
+
+/* Layer blur transparan di atas background */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    backdrop-filter: blur(8px) brightness(0.95);
+    -webkit-backdrop-filter: blur(8px) brightness(0.95);
+    z-index: -1;
+}
+
+/* ========================== */
+/*        HOME PAGE           */
+/* ========================== */
+
+header {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(120deg, #007aff, #4fa3ff);
+    -webkit-background-clip: text;
+    color: white;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+
+    background: rgba(0, 122, 255, 0.9);
+    border-radius: 14px;
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 8px 20px rgba(0, 122, 255, 0.25);
+
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background: rgba(0, 122, 255, 1);
+    transform: translateY(-2px);
+}
+
+.about {
+    width: 70%;
+    margin: 0 auto;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.40);
+    backdrop-filter: blur(25px) saturate(160%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* ========================== */
+/*        LOGIN PAGE          */
+/* ========================== */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(30px) saturate(160%);
+    padding: 45px;
+    border-radius: 24px;
+    width: 350px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.login-container h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.4);
+
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(12px);
+    font-size: 1rem;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+
+    background: rgba(0,122,255,0.9);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    margin-top: 15px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.login-container button:hover {
+    background: #007aff;
+}
+
+.error {
+    color: #ff3b30;
+    margin-bottom: 10px;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007aff;
+    text-decoration: none;
+}
+
+/* ========================== */
+/*         ATM PAGE           */
+/* ========================== */
+
+.atm-container {
+    width: 500px;
+    margin: 50px auto;
+
+    background: rgba(255,255,255,0.40);
+    backdrop-filter: blur(30px) saturate(180%);
+
+    padding: 40px;
+    border-radius: 24px;
+
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+.atm-container h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.atm-container p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+/* --- Forms --- */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0;
+}
+
+.actions form {
+    width: 46%;
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(20px);
+
+    padding: 15px;
+    border-radius: 18px;
+}
+
+.actions h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.actions input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.7);
+}
+
+.actions button {
+    width: 95%;
+    padding: 10px 0;
+    border-radius: 12px;
+    border: none;
+
+    background: rgba(0,122,255,0.9);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.actions button:hover {
+    background: #007aff;
+}
+
+.riwayat {
+    background: rgba(255,255,255,0.35);
+    backdrop-filter: blur(20px);
+
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 15px;
+    text-align: left;
+
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.riwayat ul {
+    list-style: none;
+}
+
+.riwayat li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+
+.logout-btn {
+    display: inline-block;
+    margin-top: 25px;
+
+    padding: 12px 25px;
+    border-radius: 12px;
+    background: #ff3b30;
+    color: white;
+    text-decoration: none;
+
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.logout-btn:hover {
+    background: #ff2b20;
+}
